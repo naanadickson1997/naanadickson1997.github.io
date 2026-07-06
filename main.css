@@ -1,0 +1,305 @@
+    :root {
+      --ncsu-red: #CC0000;
+      --bg: #f2f2f2; /* light gray */
+      --top-bar-h: 0.75in;  /* ~3/4 inch */
+      --left-bar-w: 1.25in; /* ~5/4 inch */
+    }
+    * { box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: var(--bg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: #111;
+    }
+
+    /* White boxes */
+.box {
+  background: white;
+
+  max-width: 75vw;           /* scale responsively */
+  margin: 0 auto 2rem;
+  min-width: 30vw;
+  text-align: left;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.box h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem; /* slightly larger than body text */
+  color: #000;        /* black */
+}
+
+.box p {
+  margin: 0;
+  color: #555;        /* gray text */
+  line-height: 1.5;
+}
+
+.box ul {
+  list-style-type: square;   /* remove default bullets */
+  list-style-position: inside;   /* remove default bullets */
+  padding-left: 1.25rem;   /* indent a little */
+}
+
+
+
+.box li {
+  margin-bottom: 0.5rem; /* space between list items */
+  line-height: 1.5;      /* optional: increase line height for readability */
+}
+
+
+
+    /* Decorative bars */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--top-bar-h);
+      background: var(--ncsu-red);
+      z-index: 1000;
+    }
+    .left-bar {
+      position: fixed;
+      top: var(--top-bar-h);
+      left: 0;
+      bottom: 0;
+      width: var(--left-bar-w);
+      background: var(--ncsu-red);
+      z-index: 900;
+    }
+
+    /* Main content area sits to the right of the left bar and below the top bar */
+    .content {
+      padding: 2rem;
+      padding-top: calc(2rem + var(--top-bar-h));
+      padding-left: calc(2rem + var(--left-bar-w));
+      min-height: 100%;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      max-width: 75vw;
+      margin:auto;
+      margin-bottom: 2rem;
+
+
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+    }
+    .avatar {
+      width: min(500px, 50vw);
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* Optional: better print behavior */
+    @media print {
+      .top-bar, .left-bar { position: absolute; }
+      .content {
+        padding-top: calc(1rem + var(--top-bar-h));
+        padding-left: calc(1rem + var(--left-bar-w));
+      }
+    }
+
+.navbar {
+      overflow: hidden;
+      background-color: #CC0000;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    /* Navbar links */
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    /* Change color on hover */
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Push items to the right if needed */
+    .navbar-right {
+      margin-left: auto;
+    }
+
+/* Each research item */
+.research-box {
+  background: #fff;
+    max-width: 75vw;           /* scale responsively */
+  margin: 0 auto 2rem;
+  min-width: 30vw; 
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+
+  text-align: center; /* centers inline content, but not needed if we use auto margins */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Title link */
+.research-box a {
+  display: block;
+  font-weight: bold;
+  color: #CC0000;
+  font-size: 1.25rem;
+  text-decoration: none; /* remove underline */
+  margin-bottom: 1rem;
+}
+
+.research-box a:hover {
+  text-decoration: underline; /* optional hover effect */
+}
+
+/* Image */
+.research-box img {
+  display: block;           /* makes image a block element */
+  margin-left: auto;        /* auto margins on both sides */
+  margin-right: auto;
+  max-width: 80%;           /* scale responsively */
+  min-width: 60%;           /* scale responsively */
+  height: auto;             /* preserve aspect ratio */
+}
+
+.research-authors {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Journal info */
+.research-journal {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: #666;          /* gray, subtle */
+  font-style: italic;
+}
+
+h2 {
+  max-width: 75vw;
+  margin: 2rem auto 1rem; /* auto centers it */
+  text-align: center;
+}
+
+.review-box {
+  background: #fff;
+  text-align: center; /* centers inline content, but not needed if we use auto margins */
+  max-width: 75vw;           /* scale responsively */
+  margin: 0 auto 2rem;
+  min-width: 30vw; 
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.review-text {
+  font-size: 1.2rem;       /* slightly larger than body text */
+  color: #CC0000;            
+  margin: 0 0 0.75rem 0;   /* spacing below text */
+  quotes: "“" "”" "‘" "’"; /* ensures proper quotation marks */
+}
+
+.review-text::before {
+  content: open-quote;
+}
+
+.review-text::after {
+  content: close-quote;
+}
+
+.review-author {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #888;             /* light gray */
+  margin: 0;
+  text-align: right;       /* aligns author to the right */
+}
+
+.pdf-wrapper {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+}
+
+.pdf-wrapper h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem; /* slightly larger than body text */
+  color: #000;        /* black */
+}
+
+.pdf-frame {
+  width: 1500px;
+  height: 1000px;
+  border: none;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.pdf-card {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+.pdf-thumb {
+  min-width: 1000px;
+  max-width: 90%;
+  margin-bottom: 0.5rem;
+}
+.pdf-title {
+  display: block;
+  font-weight: bold;
+  color: #b30000;
+  text-decoration: none;
+}
+.pdf-title:hover {
+  text-decoration: underline;
+}
+
+.accordion-text {
+  color: #CC0000;
+  cursor: pointer;
+  text-align: center;
+  font-size: 20px;
+}
+
+.accordion-panel {
+  max-height: 0;          /* hidden by default */
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background: #f9f9f9;
+  padding: 0 15px;
+  border-radius: 6px;
+}
+
+.accordion-panel p {
+  text-align: left;
+  color: gray;
+}
+
+
+
+
